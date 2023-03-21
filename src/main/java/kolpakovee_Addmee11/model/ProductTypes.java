@@ -5,8 +5,8 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.io.Serializable;
 import java.util.List;
 
-public record Products(
-        @JsonProperty("products")
-        List<Product> products
+public record ProductTypes(
+        @JsonProperty("product_types")
+        List<ProductType> productTypes
 ) implements Serializable {
 }
