@@ -6,7 +6,7 @@ import java.io.Serializable;
 import java.util.List;
 
 public record Visitor(
-        @JsonProperty("menu_dish")
+        @JsonProperty("vis_name")
         String name,
         @JsonProperty("vis_ord_started")
         String startOrderingTime,
