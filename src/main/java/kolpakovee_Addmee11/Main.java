@@ -1,25 +1,30 @@
 package kolpakovee_Addmee11;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
-import kolpakovee_Addmee11.model.OperationType;
+import kolpakovee_Addmee11.model.Cooks;
+import kolpakovee_Addmee11.model.DishCards;
+import kolpakovee_Addmee11.model.OperationTypes;
 
 import java.io.*;
 
 public class Main {
     public static void main(String[] args) throws IOException {
         ObjectMapper objectMapper = new ObjectMapper();
-//        File file = new File("src/main/resources/operation_types.txt");
-//
-//        OperationType[] operation_types = objectMapper.readValue(file, OperationType[].class);
-//
-//        for (var el : operation_types){
-//            System.out.printf("id: %s \t name: %s \n", el.id(), el.name());
-//        }
 
-        OperationType[] op = {new OperationType(1, "frying"), new OperationType(17, "pouring boiled water into a paper cup")};
+        File operation_file = new File("src/main/resources/operation_types.txt");
+        File cookers_file = new File("src/main/resources/cookers.txt");
+        File dishCards_file = new File("src/main/resources/dish_cards.txt");
 
-        String json = objectMapper.writeValueAsString(op);
+        OperationTypes types = objectMapper.readValue(operation_file, OperationTypes.class);
+        Cooks cooks = objectMapper.readValue(cookers_file, Cooks.class);
+        DishCards dishCards = objectMapper.readValue(dishCards_file, DishCards.class);
 
-        System.out.println(json);
+        String operation_json = objectMapper.writeValueAsString(types);
+        String cooks_json = objectMapper.writeValueAsString(cooks);
+        String dishCards_json = objectMapper.writeValueAsString(dishCards);
+
+        System.out.println(operation_json + "\n");
+        System.out.println(cooks_json + "\n");
+        System.out.println(dishCards_json + "\n");
     }
 }
