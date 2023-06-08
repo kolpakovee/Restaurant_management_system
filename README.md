@@ -1,3 +1,3 @@
-# Restaurant_management_system
-## Схема работы ресторана:
+# Restaurant management system
+## Restaurant scheme:
 ![](img/схема.jpg)
